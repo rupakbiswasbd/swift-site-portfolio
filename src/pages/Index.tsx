@@ -41,10 +41,10 @@ const Index = () => {
         <ContactSection />
 
         {/* Footer */}
-        <footer className="bg-muted/50 border-t py-8 px-6">
+        <footer className="bg-muted/50 border-t py-6 sm:py-8 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-            <p>© 2024 Hemendra Rupak Biswas. All rights reserved.</p>
-            <p className="text-sm mt-2">Built with React, TypeScript & Tailwind CSS</p>
+            <p className="text-sm sm:text-base">© 2024 Hemendra Rupak Biswas. All rights reserved.</p>
+            <p className="text-xs sm:text-sm mt-2">Built with React, TypeScript & Tailwind CSS</p>
           </div>
         </footer>
       </main>
