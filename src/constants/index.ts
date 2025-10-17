@@ -3,8 +3,8 @@ export const MENU_ITEMS = [
   { label: "Home", section: "hero" },
   { label: "About", section: "about" },
   { label: "Skills", section: "skills" },
-  { label: "Projects", section: "projects" },
   { label: "Experience and education", section: "experience" },
+  { label: "Projects", section: "projects" },
   { label: "Contact", section: "contact" },
 ] as const;
 

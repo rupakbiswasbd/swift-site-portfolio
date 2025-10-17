@@ -44,8 +44,8 @@ const Index = () => {
         <HeroSection onScrollToContact={() => scrollToSection("contact")} />
         <AboutSection />
         <SkillsSection />
-        <ProjectsSection />
         <ExperienceEducationSection />
+        <ProjectsSection />
         <ContactSection />
 
         {/* Footer */}
