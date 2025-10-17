@@ -6,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface DesktopNavProps {
   onNavigate: (section: string) => void;
@@ -22,7 +23,8 @@ const DesktopNav = ({ onNavigate }: DesktopNavProps) => {
   ];
 
   return (
-    <div className="hidden lg:block fixed top-6 right-6 z-50">
+    <div className="hidden lg:flex fixed top-6 right-6 z-50 gap-3">
+      <ThemeToggle />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button 

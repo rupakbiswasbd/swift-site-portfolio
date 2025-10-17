@@ -20,7 +20,7 @@ const Index = () => {
   };
 
   return (
-    <div className="flex min-h-screen w-full bg-gradient-subtle">
+    <div className="flex min-h-screen w-full" style={{ background: 'var(--gradient-mesh)' }}>
       {/* Desktop Sidebar */}
       <div className={`hidden lg:block ${sidebarOpen ? 'w-80' : 'w-0'} transition-all duration-300`}>
         {sidebarOpen && <ProfileSidebar onNavigate={scrollToSection} />}
