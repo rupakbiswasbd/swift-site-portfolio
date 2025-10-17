@@ -8,6 +8,7 @@ import ExperienceEducationSection from "@/components/sections/ExperienceEducatio
 import ContactSection from "@/components/sections/ContactSection";
 import MobileMenu from "@/components/MobileMenu";
 import DesktopNav from "@/components/DesktopNav";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -20,9 +21,16 @@ const Index = () => {
   };
 
   return (
-    <div className="flex min-h-screen w-full" style={{ background: 'var(--gradient-mesh)' }}>
+    <div
+      className="flex min-h-screen w-full"
+      style={{ background: "var(--gradient-mesh)" }}
+    >
       {/* Desktop Sidebar */}
-      <div className={`hidden lg:block ${sidebarOpen ? 'w-80' : 'w-0'} transition-all duration-300`}>
+      <div
+        className={`hidden lg:block ${
+          sidebarOpen ? "w-80" : "w-0"
+        } transition-all duration-300`}
+      >
         {sidebarOpen && <ProfileSidebar onNavigate={scrollToSection} />}
       </div>
 
@@ -43,11 +51,18 @@ const Index = () => {
         {/* Footer */}
         <footer className="bg-muted/50 border-t py-6 sm:py-8 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-            <p className="text-sm sm:text-base">© 2024 Hemendra Rupak Biswas. All rights reserved.</p>
-            <p className="text-xs sm:text-sm mt-2">Built with React, TypeScript & Tailwind CSS</p>
+            <p className="text-sm sm:text-base">
+              © 2024 Hemendra Rupak Biswas. All rights reserved.
+            </p>
+            <p className="text-xs sm:text-sm mt-2">
+              Built with React, TypeScript & Tailwind CSS
+            </p>
           </div>
         </footer>
       </main>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   );
 };
