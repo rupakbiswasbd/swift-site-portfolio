@@ -18,4 +18,40 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Optimize chunk splitting for better caching
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Separate vendor chunks for better caching
+          "react-vendor": ["react", "react-dom"],
+          "ui-vendor": [
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-slot",
+          ],
+          "router-vendor": ["react-router-dom"],
+          "theme-vendor": ["next-themes"],
+          "carousel-vendor": ["embla-carousel-react"],
+        },
+      },
+    },
+    // Enable source maps for production debugging (optional)
+    sourcemap: false,
+    // Optimize CSS
+    cssCodeSplit: true,
+    // Set chunk size warning limit
+    chunkSizeWarningLimit: 1000,
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: [
+      "react",
+      "react-dom",
+      "react-router-dom",
+      "next-themes",
+      "embla-carousel-react",
+      "lucide-react",
+    ],
+  },
 }));
