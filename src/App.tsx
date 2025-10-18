@@ -15,7 +15,17 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename={import.meta.env.MODE === "production" ? "/swift-site-portfolio" : "/"}>
+        <BrowserRouter
+          basename={
+            import.meta.env.MODE === "production"
+              ? "/swift-site-portfolio"
+              : "/"
+          }
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <Routes>
             <Route path="/" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

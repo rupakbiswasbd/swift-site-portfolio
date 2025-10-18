@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { usePopover } from "@/contexts/PopoverContext";
 
 const ScrollToTop = () => {
   const { isVisible, scrollToTop } = useScrollToTop();
+  const { isPopoverOpen } = usePopover();
 
   return (
     <>
-      {isVisible && (
+      {isVisible && !isPopoverOpen && (
         <Button
           onClick={scrollToTop}
           size="icon"
